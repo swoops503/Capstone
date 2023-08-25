@@ -1,16 +1,13 @@
-import { useState } from 'react'
-import './App.css'
+import React from 'react';
+import { Routes, Route } from "react-router-dom";
+import { GetAllProducts } from './assets/Components/GetAllProducts';
 
-function App() {
-  const [count, setCount] = useState(0)
-
+const App = () => {
   return (
-    <>
-      <div>
-       <h1>PLACEHOLEDER</h1>
-      </div>
-    </>
-  )
-}
+    <div>
+      <GetAllProducts />
+    </div>
+  );
+};
 
-export default App
+export default App;
