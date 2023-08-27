@@ -28,7 +28,7 @@ export const GetAllProducts = () => {
         {products.map((product) => (
           <div key={product.id}>
             <h2>{product.title}</h2>
-            <p>{product.description}</p>
+            <img src={product.image} alt={product.title} style={{ maxWidth: "300px" }}/>
             <p>Price: ${product.price}</p>
             <p>Category: {product.category}</p>
             <button onClick={() => handleShowDetails(product)}>See Details</button>
@@ -38,6 +38,7 @@ export const GetAllProducts = () => {
       {selectedProduct && (
         <div className="selected-product">
           <h2>{selectedProduct.title}</h2>
+          <img src={selectedProduct.image} alt={selectedProduct.title} style={{ maxWidth: "400px" }}/>
           <p>{selectedProduct.description}</p>
           <p>Price: ${selectedProduct.price}</p>
           <p>Category: {selectedProduct.category}</p>
