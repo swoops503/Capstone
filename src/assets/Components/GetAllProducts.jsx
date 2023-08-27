@@ -2,14 +2,12 @@ import React, { useState, useEffect } from "react";
 
 export const GetAllProducts = () => {
   const [products, setProducts] = useState([]);
+  const [selectedProduct, setSelectedProduct] = useState(null);
 
-  // GET all products function
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await fetch(
-          "https://fakestoreapi.com/products"
-        );
+        const response = await fetch("https://fakestoreapi.com/products");
         const data = await response.json();
         setProducts(data);
       } catch (error) {
@@ -20,11 +18,12 @@ export const GetAllProducts = () => {
     fetchProducts();
   }, []);
 
+  const handleShowDetails = (product) => {
+    setSelectedProduct(product);
+  };
+
   return (
     <div>
-      <div className="header">
-        <h1>Fake Store</h1>
-      </div>
       <div className="productsdiv">
         {products.map((product) => (
           <div key={product.id}>
@@ -32,9 +31,18 @@ export const GetAllProducts = () => {
             <p>{product.description}</p>
             <p>Price: ${product.price}</p>
             <p>Category: {product.category}</p>
+            <button onClick={() => handleShowDetails(product)}>See Details</button>
           </div>
         ))}
       </div>
+      {selectedProduct && (
+        <div className="selected-product">
+          <h2>{selectedProduct.title}</h2>
+          <p>{selectedProduct.description}</p>
+          <p>Price: ${selectedProduct.price}</p>
+          <p>Category: {selectedProduct.category}</p>
+        </div>
+      )}
     </div>
   );
 };
