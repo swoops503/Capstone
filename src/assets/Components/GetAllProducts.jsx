@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import './Components.css';
 
 export const GetAllProducts = () => {
   const [products, setProducts] = useState([]);
@@ -9,6 +10,7 @@ export const GetAllProducts = () => {
       try {
         const response = await fetch("https://fakestoreapi.com/products");
         const data = await response.json();
+        console.log("GetAllProducts was rendered")
         setProducts(data);
       } catch (error) {
         console.error("Error fetching data:", error);
@@ -21,6 +23,7 @@ export const GetAllProducts = () => {
   const handleShowDetails = (product) => {
     setSelectedProduct(product);
   };
+
 
   return (
     <div>

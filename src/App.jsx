@@ -1,7 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom"; // Import BrowserRouter as Router
-import { GetAllProducts } from './assets/Components/GetAllProducts';
-import { Navbar } from './assets/Components/Navbar';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom"; 
 import { Homepage } from './assets/Pages/HomePage';
 
 const App = () => {
@@ -10,10 +8,10 @@ const App = () => {
       <div className="main-container">
         <div className="route-container">
           <Routes>
-            <Route path="/" element={<GetAllProducts />} />
+            <Route path="/" element={<Homepage />} />
           </Routes>
         </div>
-        <GetAllProducts />
+        <Homepage />
       </div>
     </Router>
   );
