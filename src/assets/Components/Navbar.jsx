@@ -7,7 +7,9 @@ export const Navbar = () => {
     <div className="navbar">
         <h1>FakeStore.Gov</h1>
       <Link to="/">Home </Link> |
-      <Link to="/Profile"> Profile </Link>
+      <Link to="/Profile"> Profile </Link> |
+      <Link to="/Cart"> Cart </Link>
+
     </div>
   );
 }

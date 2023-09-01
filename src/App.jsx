@@ -2,6 +2,8 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"; 
 import { Homepage } from './assets/Pages/HomePage';
 import { Profile } from './assets/Pages/Profile';
+import { MyCart } from './assets/Pages/Cart';
+
 
 const App = () => {
   return (
@@ -11,6 +13,7 @@ const App = () => {
           <Routes>
             <Route path="/" element={<Homepage />} />
             <Route path="/Profile" element={<Profile />} />
+            <Route path="/Cart" element={<MyCart />} />
           </Routes>
         </div>
         <Homepage />
